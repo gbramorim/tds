@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { HOME } from "../../constants/constants";
 import {
   HomeButtonsContainer,
@@ -28,7 +29,7 @@ interface WeatherData {
 
 export default function Home() {
   const [weather, setWeather] = useState<WeatherData | null>();
-  const [city, setCity] = useState("");
+  let navigate = useNavigate();
 
   const handleSubmit = async (city: string) => {
     const API_KEY = "bef687a05a9f4d789ae22518232701";
@@ -37,13 +38,15 @@ export default function Home() {
     try {
       const response = await axios.get(API_URL).then((res) => res.data);
       setWeather(response);
+      navigate(
+        `/weather/${city}/${response.current.temp_c}/${response.current.feelslike_c}/${response.current.humidity}/${response.current.condition.text}`
+      );
     } catch (error) {
       console.log(error);
     }
   };
 
   const handleCityChange = (selected: string) => {
-    setCity(selected);
     handleSubmit(selected);
   };
 
