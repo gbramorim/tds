@@ -20,7 +20,7 @@ const router = createBrowserRouter([
     errorElement: <Error />,
   },
   {
-    path: "/weather/:city/:tempc/:feelslikec/:humidity/:condition",
+    path: "/weather/:city/:tempc/:feelslikec/:humidity/:condition/:lat/:lon",
     element: <Weather />,
     errorElement: <Error />,
   },

@@ -13,22 +13,23 @@ import {
 import { WorldWide } from "../../assets";
 import axios from "axios";
 
-interface WeatherData {
-  location: {
-    name: string;
-  };
-  current: {
-    temp_c: number;
-    feelslike_c: number;
-    humidity: number;
-    condition: {
-      text: string;
-    };
-  };
-}
+// interface WeatherData {
+//   location: {
+//     name: string;
+//   };
+//   current: {
+//     temp_c: number;
+//     feelslike_c: number;
+//     humidity: number;
+//     condition: {
+//       text: string;
+//       is_day: string;
+//     };
+//   };
+// }
 
 export default function Home() {
-  const [weather, setWeather] = useState<WeatherData | null>();
+  const [weather, setWeather] = useState({} as any);
   let navigate = useNavigate();
 
   const handleSubmit = async (city: string) => {
@@ -38,8 +39,9 @@ export default function Home() {
     try {
       const response = await axios.get(API_URL).then((res) => res.data);
       setWeather(response);
+      console.log(response);
       navigate(
-        `/weather/${city}/${response.current.temp_c}/${response.current.feelslike_c}/${response.current.humidity}/${response.current.condition.text}`
+        `/weather/${city}/${response.current.temp_c}/${response.current.feelslike_c}/${response.current.humidity}/${response.current.condition.text}/${response.location.lat}/${response.location.lon}`
       );
     } catch (error) {
       console.log(error);
