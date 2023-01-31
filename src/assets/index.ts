@@ -5,5 +5,17 @@ import Rain from "./rain.svg";
 import Snow from "./snow.svg";
 import Sun from "./sun.svg";
 import WorldWide from "./worldwide.svg";
+import ArrowUp from "./arrowup.svg";
+import ArrowDown from "./arrowdown.svg";
 
-export { CloudSun, Moon, RainSun, Rain, Snow, Sun, WorldWide };
+export {
+  CloudSun,
+  Moon,
+  RainSun,
+  Rain,
+  Snow,
+  Sun,
+  WorldWide,
+  ArrowUp,
+  ArrowDown,
+};
