@@ -2,7 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { Error, Home, Weather } from "./components/index";
 import { createGlobalStyle } from "styled-components";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  BrowserRouter,
+} from "react-router-dom";
 
 // this reset is not necessary, but it's a good practice
 const GlobalStyle = createGlobalStyle`
@@ -32,8 +36,10 @@ const root = ReactDOM.createRoot(
 );
 
 root.render(
-  <React.StrictMode>
-    <GlobalStyle />
-    <RouterProvider router={router} />
-  </React.StrictMode>
+  <BrowserRouter>
+    <React.StrictMode>
+      <GlobalStyle />
+      <RouterProvider router={router} />
+    </React.StrictMode>
+  </BrowserRouter>
 );

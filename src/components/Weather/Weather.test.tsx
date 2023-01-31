@@ -1,12 +1,12 @@
 import React from "react";
 import { getByText, render } from "@testing-library/react";
 
-import Home from "./Home";
+import Weather from "./Weather";
 
-describe("Home", () => {
+describe("Weather", () => {
   it("renders the component", () => {
-    const { baseElement } = render(<Home />);
-    const element = getByText(baseElement, "Home");
+    const { baseElement } = render(<Weather />);
+    const element = getByText(baseElement, "Weather");
 
     expect(element).toBeInTheDocument();
   });
