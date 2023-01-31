@@ -17,7 +17,8 @@ export default function Home() {
   let navigate = useNavigate();
 
   const handleSubmit = async (city: string) => {
-    const API_KEY = APIKEY;
+    // const API_KEY = APIKEY; Originalmente era pra estar aqui a API KEY só que o Netlify nao ta reconhecendo deploy de arquivos ignorados pelo git pela integração
+    const API_KEY = "bef687a05a9f4d789ae22518232701";
     const API_URL = `https://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${city}&days=1&aqi=no&alerts=no`;
 
     try {
