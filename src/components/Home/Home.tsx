@@ -17,7 +17,7 @@ export default function Home() {
 
   const handleSubmit = async (city: string) => {
     const API_KEY = "bef687a05a9f4d789ae22518232701";
-    const API_URL = `http://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${city}&days=1&aqi=no&alerts=no`;
+    const API_URL = `https://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${city}&days=1&aqi=no&alerts=no`;
 
     try {
       const response = await axios.get(API_URL).then((res) => res.data);
