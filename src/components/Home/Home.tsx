@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { HOME } from "../../constants/constants";
+import { APIKEY } from "../../constants/keys";
 import {
   HomeButtonsContainer,
   HomeContainer,
@@ -16,7 +17,7 @@ export default function Home() {
   let navigate = useNavigate();
 
   const handleSubmit = async (city: string) => {
-    const API_KEY = "bef687a05a9f4d789ae22518232701";
+    const API_KEY = APIKEY;
     const API_URL = `https://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${city}&days=1&aqi=no&alerts=no`;
 
     try {

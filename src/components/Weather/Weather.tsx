@@ -20,6 +20,7 @@ import {
   Divider,
   InformationContainerContentTitle,
   InformationContainerContentResult,
+  BackButton,
 } from "./styles";
 import {
   IconAfternoon,
@@ -28,8 +29,11 @@ import {
   IconNight,
   backgroundGradient,
   getWeatherIcon,
+  IconBack,
+  ArrowDown,
+  ArrowUp,
 } from "./Utils";
-import { ArrowDown, ArrowUp } from "../../assets";
+// import { ArrowDown, ArrowUp } from "../../assets";
 
 export default function Weather() {
   const location = useLocation();
@@ -42,6 +46,9 @@ export default function Weather() {
 
   return (
     <WeatherContainer theme={theme}>
+      <BackButton onClick={() => window.history.back()}>
+        <img src={IconBack(theme)} alt="Go Back Button" />
+      </BackButton>
       <WeatherTitle theme={theme}>{object.city}</WeatherTitle>
       <WeatherSubtitle theme={theme}>{object.condition}</WeatherSubtitle>
       <WeatherContainerTemperature>
@@ -51,13 +58,13 @@ export default function Weather() {
         <WeatherContainerTemperatureMinAndMax>
           <WeatherCelsiusIcon theme={theme}>C°</WeatherCelsiusIcon>
           <WeatherContainerTemperatureMinAndMaxArrowsContainer>
-            <Arrows src={ArrowUp} alt="Arrow Up" />
+            <Arrows src={ArrowUp(theme)} alt="Arrow Up" />
             <MinAndMaxTemperature theme={theme}>
               {object.maxTemp | 0}°
             </MinAndMaxTemperature>
           </WeatherContainerTemperatureMinAndMaxArrowsContainer>
           <WeatherContainerTemperatureMinAndMaxArrowsContainer>
-            <Arrows src={ArrowDown} alt="Arrow Down" />
+            <Arrows src={ArrowDown(theme)} alt="Arrow Down" />
             <MinAndMaxTemperature theme={theme}>
               {object.minTemp | 0}°
             </MinAndMaxTemperature>

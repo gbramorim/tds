@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="7px" height="16px" viewBox="0 0 7 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 59 (101010) - https://sketch.com -->
+    <title>C1D12528-B1AB-493A-B148-4FE6B5A5F72F</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="25.6472649%" x2="50%" y2="88.8189853%" id="linearGradient-1">
+            <stop stop-color="#616978" offset="0%"></stop>
+            <stop stop-color="#3C4353" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-Rainy-example" transform="translate(-536.000000, -266.000000)">
+            <rect fill="#0F0F0F" x="0" y="0" width="1024" height="768"></rect>
+            <rect id="Rectangle" fill="url(#linearGradient-1)" x="0" y="0" width="1024" height="768"></rect>
+            <text id="17" font-family="Helvetica" font-size="93" font-weight="normal" fill="#FFFFFF">
+                <tspan x="446" y="293">17</tspan>
+            </text>
+            <g id="Group-3" opacity="0.580031622" transform="translate(540.000000, 274.000000) scale(1, -1) translate(-540.000000, -274.000000) translate(537.000000, 267.000000)" fill="#FFFFFF" stroke="#FFFFFF">
+                <line x1="2.74540047" y1="13.9457621" x2="2.74540047" y2="3.41060513e-13" id="Path-3-Copy" stroke-linecap="round"></line>
+                <polygon id="Path-4-Copy" stroke-linejoin="round" points="2.74540047 4.75175455e-14 1.02140518e-14 4.14908241 5.42519984 4.14908241"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

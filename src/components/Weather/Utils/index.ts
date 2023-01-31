@@ -1,7 +1,16 @@
 import { GRADIENTS } from "../../../constants/constants";
 import {
+  ArrowDownBlack,
+  ArrowDownBlue,
+  ArrowDownSnow,
+  ArrowUpBlack,
+  ArrowUpBlue,
+  ArrowUpSnow,
   CloudSunBlack,
   CloudSunBlue,
+  LeftArrowBlack,
+  LeftArrowBlue,
+  LeftArrowSnow,
   MoonBlack,
   MoonBlue,
   Rain,
@@ -132,5 +141,35 @@ export const IconNight = (theme?: string) => {
     return SnowMoon;
   } else {
     return MoonBlue;
+  }
+};
+
+export const IconBack = (theme?: string) => {
+  if (theme !== "Snowy" && theme !== "Sunny") {
+    return LeftArrowBlack;
+  } else if (theme === "Snowy") {
+    return LeftArrowSnow;
+  } else {
+    return LeftArrowBlue;
+  }
+};
+
+export const ArrowDown = (theme?: string) => {
+  if (theme !== "Snowy" && theme !== "Sunny") {
+    return ArrowDownBlack;
+  } else if (theme === "Snowy") {
+    return ArrowDownSnow;
+  } else {
+    return ArrowDownBlue;
+  }
+};
+
+export const ArrowUp = (theme?: string) => {
+  if (theme !== "Snowy" && theme !== "Sunny") {
+    return ArrowUpBlack;
+  } else if (theme === "Snowy") {
+    return ArrowUpSnow;
+  } else {
+    return ArrowUpBlue;
   }
 };

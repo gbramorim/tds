@@ -136,3 +136,13 @@ export const WeatherIcon = styled.img`
   height: 98px;
   margin-bottom: 50px;
 `;
+
+export const BackButton = styled.button`
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 22px;
+  border: none;
+  cursor: pointer;
+  background: transparent;
+`;
