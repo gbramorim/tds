@@ -36,10 +36,8 @@ const root = ReactDOM.createRoot(
 );
 
 root.render(
-  <BrowserRouter>
-    <React.StrictMode>
-      <GlobalStyle />
-      <RouterProvider router={router} />
-    </React.StrictMode>
-  </BrowserRouter>
+  <React.StrictMode>
+    <GlobalStyle />
+    <RouterProvider router={router} />
+  </React.StrictMode>
 );
