@@ -33,6 +33,11 @@ export const Divider = styled.div`
   background-color: ${(props) => (props.theme === "Snowy" ? "#000" : "#fff")}};
   margin-left: 20px;
   margin-right: 20px;
+
+  @media screen and (max-width: 768px) {
+    margin-right: 5px;
+    margin-left: 5px;
+  }
 `;
 
 export const DayContainer = styled.div`
@@ -48,6 +53,10 @@ export const DayContainerStations = styled.div`
   align-items: center;
   justify-content: center;
   margin-right: 46px;
+
+  @media screen and (max-width: 768px) {
+    margin-right: 26px;
+  }
 `;
 
 export const DayContainerIconStations = styled.img`
