@@ -53,10 +53,6 @@ export default function Home() {
       };
 
       navigate(`/weather/${city}`, { state: result });
-
-      // navigate(
-      //   `/weather/${city}/${}/${response.current.temp_c}/${response.forecast.forecastday[0].day.maxtemp_c}/${response.forecast.forecastday[0].day.mintemp_c}/`
-      // );
     } catch (error) {
       console.log(error);
     }

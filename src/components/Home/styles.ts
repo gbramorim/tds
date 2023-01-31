@@ -29,6 +29,7 @@ export const WorldWideSVG = styled.img`
 `;
 
 export const HomeButtonsContainer = styled.div`
+  font-family: "SFNS Display Regular";
   display: flex;
   flex-direction: column;
   align-items: center;

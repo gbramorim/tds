@@ -12,8 +12,23 @@ import {
   WeatherCelsiusIcon,
   WeatherIcon,
   DayContainer,
+  DayContainerStations,
+  DayContainerIconStations,
+  DayContainerTextStations,
+  InformationContainer,
+  InformationContainerContent,
+  Divider,
+  InformationContainerContentTitle,
+  InformationContainerContentResult,
 } from "./styles";
-import { backgroundGradient, getWeatherIcon } from "./Utils";
+import {
+  IconAfternoon,
+  IconDawn,
+  IconMorning,
+  IconNight,
+  backgroundGradient,
+  getWeatherIcon,
+} from "./Utils";
 import { ArrowDown, ArrowUp } from "../../assets";
 
 export default function Weather() {
@@ -23,42 +38,109 @@ export default function Weather() {
   const theme = backgroundGradient(object.condition);
   const icon = getWeatherIcon(object.condition);
 
-  console.log(icon);
+  console.log(theme);
 
   return (
     <WeatherContainer theme={theme}>
       <WeatherTitle theme={theme}>{object.city}</WeatherTitle>
       <WeatherSubtitle theme={theme}>{object.condition}</WeatherSubtitle>
       <WeatherContainerTemperature>
-        <WeatherTemperature>{object.tempc | 0}</WeatherTemperature>
+        <WeatherTemperature theme={theme}>
+          {object.tempc | 0}
+        </WeatherTemperature>
         <WeatherContainerTemperatureMinAndMax>
-          <WeatherCelsiusIcon>C°</WeatherCelsiusIcon>
+          <WeatherCelsiusIcon theme={theme}>C°</WeatherCelsiusIcon>
           <WeatherContainerTemperatureMinAndMaxArrowsContainer>
             <Arrows src={ArrowUp} alt="Arrow Up" />
-            <MinAndMaxTemperature>{object.maxTemp | 0}°</MinAndMaxTemperature>
+            <MinAndMaxTemperature theme={theme}>
+              {object.maxTemp | 0}°
+            </MinAndMaxTemperature>
           </WeatherContainerTemperatureMinAndMaxArrowsContainer>
           <WeatherContainerTemperatureMinAndMaxArrowsContainer>
             <Arrows src={ArrowDown} alt="Arrow Down" />
-            <MinAndMaxTemperature>{object.minTemp | 0}°</MinAndMaxTemperature>
+            <MinAndMaxTemperature theme={theme}>
+              {object.minTemp | 0}°
+            </MinAndMaxTemperature>
           </WeatherContainerTemperatureMinAndMaxArrowsContainer>
         </WeatherContainerTemperatureMinAndMax>
       </WeatherContainerTemperature>
-      <WeatherIcon src={icon} alt="" />
+      <WeatherIcon src={icon} alt="Icon for represent climatics" />
 
       <DayContainer>
-        <h4>dawn</h4>
-        <h4>morning</h4>
-        <h4>afternoon</h4>
-        <h4>night</h4>
+        <DayContainerStations>
+          <DayContainerTextStations theme={theme}>
+            dawn
+          </DayContainerTextStations>
+          <DayContainerIconStations src={IconDawn(theme)} />
+          <DayContainerTextStations theme={theme}>
+            {object.hours.three.tempc | 0}°C
+          </DayContainerTextStations>
+        </DayContainerStations>
+        <DayContainerStations>
+          <DayContainerTextStations theme={theme}>
+            morning
+          </DayContainerTextStations>
+          <DayContainerIconStations src={IconMorning(theme)} />
+          <DayContainerTextStations theme={theme}>
+            {object.hours.fifteen.tempc | 0}°C
+          </DayContainerTextStations>
+        </DayContainerStations>
+        <DayContainerStations>
+          <DayContainerTextStations theme={theme}>
+            afternoon
+          </DayContainerTextStations>
+          <DayContainerIconStations src={IconAfternoon(theme)} />
+          <DayContainerTextStations theme={theme}>
+            {object.hours.nine.tempc | 0}°C
+          </DayContainerTextStations>
+        </DayContainerStations>
+        <DayContainerStations>
+          <DayContainerTextStations theme={theme}>
+            night
+          </DayContainerTextStations>
+          <DayContainerIconStations src={IconNight(theme)} />
+          <DayContainerTextStations theme={theme}>
+            {object.hours.twentyone.tempc | 0}°C
+          </DayContainerTextStations>
+        </DayContainerStations>
       </DayContainer>
-      <h3>Humidity: {object.humidity}%</h3>
-      <h3>Wind: {object.wind} mph</h3>
-      <h3>Sunrise: {object.sunrise}</h3>
-      <h3>Sunset: {object.sunset}</h3>
-      <h3>3:00: {object.hours.three.tempc}°C</h3>
-      <h3>9:00: {object.hours.nine.tempc}°C</h3>
-      <h3>15:00: {object.hours.fifteen.tempc}°C</h3>
-      <h3>21:00: {object.hours.twentyone.tempc}°C</h3>
+      <InformationContainer>
+        <InformationContainerContent>
+          <InformationContainerContentTitle theme={theme}>
+            wind speed
+          </InformationContainerContentTitle>
+          <InformationContainerContentResult theme={theme}>
+            {object.wind}m/s
+          </InformationContainerContentResult>
+        </InformationContainerContent>
+        <Divider />
+        <InformationContainerContent>
+          <InformationContainerContentTitle theme={theme}>
+            sunrise
+          </InformationContainerContentTitle>
+          <InformationContainerContentResult theme={theme}>
+            {object.sunrise}
+          </InformationContainerContentResult>
+        </InformationContainerContent>
+        <Divider />
+        <InformationContainerContent>
+          <InformationContainerContentTitle theme={theme}>
+            sunset
+          </InformationContainerContentTitle>
+          <InformationContainerContentResult theme={theme}>
+            {object.sunset}
+          </InformationContainerContentResult>
+        </InformationContainerContent>
+        <Divider />
+        <InformationContainerContent>
+          <InformationContainerContentTitle theme={theme}>
+            humidity
+          </InformationContainerContentTitle>
+          <InformationContainerContentResult theme={theme}>
+            {object.humidity}%
+          </InformationContainerContentResult>
+        </InformationContainerContent>
+      </InformationContainer>
     </WeatherContainer>
   );
 }

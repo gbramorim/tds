@@ -1,5 +1,19 @@
 import { GRADIENTS } from "../../../constants/constants";
-import { Rain, Snow, Sun } from "../../../assets";
+import {
+  CloudSunBlack,
+  CloudSunBlue,
+  MoonBlack,
+  MoonBlue,
+  Rain,
+  RainBlack,
+  RainSunBlack,
+  Snow,
+  SnowGrey,
+  SnowMoon,
+  SnowSun,
+  Sun,
+  SunBlue,
+} from "../../../assets";
 
 export const getWeatherIcon = (weather: string) => {
   if (weather === "Sunny" || weather === "Clear" || weather === "Dry") {
@@ -78,5 +92,45 @@ export const backgroundGradient = (weather: string) => {
     weather === "Torrential rain shower"
   ) {
     return GRADIENTS.SNOWY;
+  }
+};
+
+export const IconDawn = (theme?: string) => {
+  if (theme !== "Snowy" && theme !== "Sunny") {
+    return RainBlack;
+  } else if (theme === "Snowy") {
+    return SnowGrey;
+  } else {
+    return CloudSunBlue;
+  }
+};
+
+export const IconMorning = (theme?: string) => {
+  if (theme !== "Snowy" && theme !== "Sunny") {
+    return RainSunBlack;
+  } else if (theme === "Snowy") {
+    return SnowSun;
+  } else {
+    return SunBlue;
+  }
+};
+
+export const IconAfternoon = (theme?: string) => {
+  if (theme !== "Snowy" && theme !== "Sunny") {
+    return CloudSunBlack;
+  } else if (theme === "Snowy") {
+    return SnowSun;
+  } else {
+    return CloudSunBlue;
+  }
+};
+
+export const IconNight = (theme?: string) => {
+  if (theme !== "Snowy" && theme !== "Sunny") {
+    return MoonBlack;
+  } else if (theme === "Snowy") {
+    return SnowMoon;
+  } else {
+    return MoonBlue;
   }
 };
